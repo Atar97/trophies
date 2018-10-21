@@ -9,7 +9,7 @@ import NewUserForm from './users/new_user_form';
 export default () => (
     <div>
         <Navbar />
-        <div className='container'>
+        <div className='container m-1'>
             <Switch>
                 <AuthRoute path='/login' component={LoginForm} />
                 <AdminRoute path='/createUser' component={NewUserForm} />
