@@ -7,7 +7,7 @@ import UserForm from './users/user_form';
 export default () => (
     <div>
         <Switch>
-            <Route path='/signup' component={UserForm} />
+            <AuthRoute path='/signup' component={UserForm} />
         </Switch>
     </div>
 )
