@@ -28,23 +28,25 @@ class UserForm extends React.Component {
     render() {
         const {username, password} = this.state;
         return (
-            <form>
-               <div className='form-group'>
-                    <label htmlFor='username'>Username</label>
-                    <input className='form-control' id='username'
-                        value={username} 
-                        onChange={this.handleChange('username')}>
-                    </input>
-               </div>
-               <div className='form-group'>
-                    <label htmlFor='password'>Password</label>
-                    <input type='password' className='form-control' id='password'
-                        value={password} onChange={this.handleChange('password')}>
-                    </input>
-               </div>
-               <button type='submit' className='btn btn-success btn-lg'
-               onClick={this.handleClick.bind(this)}>Log In</button>
-            </form>
+            <div className='content col-4 m-3'>
+                <form>
+                <div className='form-group'>
+                        <label htmlFor='username'>Username</label>
+                        <input className='form-control' id='username'
+                            value={username} 
+                            onChange={this.handleChange('username')}>
+                        </input>
+                </div>
+                <div className='form-group'>
+                        <label htmlFor='password'>Password</label>
+                        <input type='password' className='form-control' id='password'
+                            value={password} onChange={this.handleChange('password')}>
+                        </input>
+                </div>
+                <button type='submit' className='btn btn-success'
+                onClick={this.handleClick.bind(this)}>Log In</button>
+                </form>
+            </div>
         );
     }
 }
