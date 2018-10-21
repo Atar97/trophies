@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Root from './components/root';
+import createStore from './store';
+
 document.addEventListener('DOMContentLoaded', ()=> {
   const rootEl = document.getElementById('root');
+  const store = createStore({});
   // let store;
   // if (window.currentUser.id) {
   //   const preloadedState = {
@@ -17,14 +21,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
   //   store = configureStore({});
   // }
 
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 
   ReactDOM.render(
-    <h1>Here we go</h1>,
+    <Root store={ store } />,
     rootEl
   );
-
-
 
 });
