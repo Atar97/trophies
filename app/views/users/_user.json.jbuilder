@@ -1,4 +1,3 @@
 if user
-  json.extract! user, :id, :email, :fname,
-    :lname, :DOB, :gender, :country
+  json.extract! user, :id, :username, :user_type
 end

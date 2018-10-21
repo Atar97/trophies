@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store';
 
+import * as actions from './actions/session_actions';
+
 document.addEventListener('DOMContentLoaded', ()=> {
   const rootEl = document.getElementById('root');
   let store;
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     store = configureStore({});
   }
 
+  window.actions = actions;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
