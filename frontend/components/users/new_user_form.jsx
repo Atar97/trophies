@@ -29,7 +29,7 @@ class NewUserForm extends React.Component {
     }
 
     render() {
-        const { fname, lname,  } = this.state;
+        const { fname, lname, email} = this.state;
         return (
             <div className='content col-6 m-3'>
                 <form>
@@ -50,7 +50,7 @@ class NewUserForm extends React.Component {
                     <div className='form-group'>
                         <label htmlFor='email'>Email Address</label>
                         <input className='form-control' id='email'
-                            value={email}
+                            value={email} type='email'
                             onChange={this.handleChange('email')}>
                         </input>
                     </div>

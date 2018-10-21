@@ -14,10 +14,22 @@ class UsersController < ApplicationController
   def show
   end
 
+  def update
+    if @user.update(user_params)
+      render :show 
+    else 
+      render json: @user.errors.full_messages, status: 406 
+  end 
+
+  def destroy 
+    @user.destroy
+    render json: {}
+  end 
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email)
   end
 
   def find_user

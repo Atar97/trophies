@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      render '/users/show'
+      render :current_user
     else
       render json: ['Invalid Credentials'], status: 422
     end
