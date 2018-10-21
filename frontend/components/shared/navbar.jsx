@@ -5,7 +5,8 @@ import {logout} from '../../actions/session_actions';
 
 class Navbar extends React.Component {
 
-    logout() {
+    logout(e) {
+        e.preventDefault();
         this.props.logout();
     }
 
@@ -29,7 +30,7 @@ class Navbar extends React.Component {
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <p onClick={this.logout.bind(this)} className="nav-link">Logout</p>
+                        <p onClick={this.logout.bind(this)} href='#' className="nav-link link-style">Logout</p>
                     </li>
 
                 </ul>

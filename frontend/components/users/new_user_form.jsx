@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {createUser} from '../../actions/user_actions';
 
 class NewUserForm extends React.Component {
     constructor(props) {
@@ -25,7 +26,11 @@ class NewUserForm extends React.Component {
 
     handleClick(event) {
         event.preventDefault();
-        this.props.createUser({ user: Object.assign({}, this.state) });
+        const {fname, lname} = this.state;
+        const data = Object.assign({}, this.state);
+        data.password = 'password';
+        data.username = `${fname}_${lname}`;
+        this.props.createUser({ user: data });
     }
 
     render() {
@@ -88,7 +93,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    createUser: input => console.log(input),
+    createUser: user => dispatch(createUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewUserForm);
