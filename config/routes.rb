@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resource :session, only: [:create, :destroy], defaults: {format: :json}
   resources :users, except: [:edit, :new, :index], defaults: {format: :json}
+  resources :awards, only: [:create, :update, :show, :index], defaults: {format: :json}
 
   root to: 'static_pages#root'
 end
