@@ -3,11 +3,15 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
 import UserForm from './users/user_form';
+import Navbar from './shared/navbar';
 
 export default () => (
     <div>
-        <Switch>
-            <AuthRoute path='/signup' component={UserForm} />
-        </Switch>
+        <Navbar />
+        <div className='container'>
+            <Switch>
+                <AuthRoute path='/signup' component={UserForm} />
+            </Switch>
+        </div>
     </div>
 )

@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class UserForm extends React.Component {
     render() {
         return (
-            <div className='container'>
-                <h1>Users Form</h1>
-                <p className='btn btn-primary'>do stuff</p>
-            </div>
-        )
+            <form>
+               
+            </form>
+        );
     }
 }
 
