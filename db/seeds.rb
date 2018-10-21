@@ -15,4 +15,9 @@ ActiveRecord::Base.transaction do
     {username: 'AndTony', password: 'password', user_type: 'admin'},
     {username: 'Blake', password: 'password', user_type: 'admin'}
     ])
+
+  Award.create([
+    {title: 'DSA', year: 2018},
+    {title: 'Kovaleski', year: 2018}
+  ])
 end
